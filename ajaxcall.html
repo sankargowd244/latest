@@ -1,0 +1,27 @@
+<!Doctype html>
+<head></head>
+<body>
+<button>Send an HTTP GET request to a page and get the result back</button>
+<script src="../js/jquery.js"></script>
+
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $.get("http://www.w3schools.com/jquery/jquery_ajax_get_post.asp", function(data, status){
+            alert("Data: " + data + "\nStatus: " + status);
+        });
+		
+		$.ajax({
+			url:'http://hackerearth.0x10.info/api/ctz_coders?type=json&query=list_submissions&page=1',
+			success:function(data){
+				console.log(data);
+			}
+		});
+    });
+});
+</script>
+
+
+</body>
+</html>
+
